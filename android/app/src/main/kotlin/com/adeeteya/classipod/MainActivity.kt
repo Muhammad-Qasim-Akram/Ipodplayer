@@ -14,6 +14,7 @@ import io.flutter.plugin.common.MethodChannel
 // "Custom Android activity" docs for why this base class is required.
 class MainActivity : AudioServiceFragmentActivity() {
     private val castChannelName = "com.adeeteya.classipod/cast"
+    private val equalizerHandler = EqualizerHandler()
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
@@ -29,6 +30,9 @@ class MainActivity : AudioServiceFragmentActivity() {
                 else -> result.notImplemented()
             }
         }
+
+        // Setup equalizer channel handler
+        equalizerHandler.setupChannel(flutterEngine)
     }
 
     // Opens Android's built-in "Media output" picker (the same panel shown
