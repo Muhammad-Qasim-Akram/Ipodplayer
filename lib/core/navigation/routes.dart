@@ -34,6 +34,7 @@ import 'package:classipod/features/now_playing/screen/now_playing_screen.dart';
 import 'package:classipod/features/settings/controller/settings_preferences_controller.dart';
 import 'package:classipod/features/settings/screens/about_screen.dart';
 import 'package:classipod/features/settings/screens/device_color_selection_screen.dart';
+import 'package:classipod/features/settings/screens/equalizer_screen.dart';
 import 'package:classipod/features/settings/screens/exclude_directories_screen.dart';
 import 'package:classipod/features/settings/screens/language_selection_screen.dart';
 import 'package:classipod/features/settings/screens/settings_preferences_screen.dart';
@@ -49,6 +50,7 @@ enum Routes {
   about,
   language,
   deviceColor,
+  equalizer,
   excludeDirectories,
   nowPlaying,
   nowPlayingMoreOptions,
@@ -97,6 +99,8 @@ enum Routes {
         return context.localization.languageScreenTitle;
       case deviceColor:
         return context.localization.deviceColorSettingTitle;
+      case equalizer:
+        return 'Equalizer';
       case excludeDirectories:
         return context.localization.excludeDirectoriesScreenTitle;
       case nowPlaying:
@@ -241,6 +245,14 @@ final routerProvider = Provider(
                         parentNavigatorKey: menuNavigatorKey,
                         pageBuilder: (context, state) => const CupertinoPage(
                           child: DeviceColorSelectionScreen(),
+                        ),
+                      ),
+                      GoRoute(
+                        path: Routes.equalizer.name,
+                        name: Routes.equalizer.name,
+                        parentNavigatorKey: menuNavigatorKey,
+                        pageBuilder: (context, state) => const CupertinoPage(
+                          child: EqualizerScreen(),
                         ),
                       ),
                       GoRoute(

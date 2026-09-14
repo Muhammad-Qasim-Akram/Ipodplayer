@@ -24,6 +24,7 @@ enum _SettingsDisplayItems {
   language,
   appTheme,
   deviceColor,
+  equalizer,
   clickWheelSize,
   clickWheelSensitivity,
   isTouchScreenEnabled,
@@ -54,6 +55,8 @@ enum _SettingsDisplayItems {
         return context.localization.touchScreenSettingTitle;
       case deviceColor:
         return context.localization.deviceColorSettingTitle;
+      case equalizer:
+        return 'Equalizer';
       case clickWheelSize:
         return context.localization.clickWheelSizeSettingTitle;
       case clickWheelSensitivity:
@@ -125,6 +128,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen>
         break;
       case _SettingsDisplayItems.deviceColor:
         context.goNamed(Routes.deviceColor.name);
+        break;
+      case _SettingsDisplayItems.equalizer:
+        context.goNamed(Routes.equalizer.name);
         break;
       case _SettingsDisplayItems.clickWheelSize:
         await ref

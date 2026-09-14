@@ -1,16 +1,24 @@
+import 'package:classipod/core/extensions/build_context_extensions.dart';
+import 'package:classipod/core/navigation/routes.dart';
+import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
 import 'package:classipod/features/settings/controller/equalizer_controller.dart';
 import 'package:classipod/features/settings/models/equalizer_settings.dart';
-import 'package:flutter/material.dart';
+import 'package:classipod/features/status_bar/widgets/status_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class EqualizerScreen extends ConsumerStatefulWidget {
-  const EqualizerScreen({Key? key}) : super(key: key);
+  const EqualizerScreen({super.key});
 
   @override
   ConsumerState<EqualizerScreen> createState() => _EqualizerScreenState();
 }
 
-class _EqualizerScreenState extends ConsumerState<EqualizerScreen> {
+class _EqualizerScreenState extends ConsumerState<EqualizerScreen>
+    with CustomScreen {
+  @override
+  String get routeName => Routes.equalizer.name;
+
   @override
   void initState() {
     super.initState();
@@ -21,93 +29,115 @@ class _EqualizerScreenState extends ConsumerState<EqualizerScreen> {
   }
 
   @override
+  List<dynamic> get displayItems => []; // Not used in this screen
+
+  @override
+  Future<void> onSelectPressed() async {} // Not used in this screen
+
+  @override
   Widget build(BuildContext context) {
     final equalizerState = ref.watch(equalizerControllerProvider);
-    
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Equalizer'),
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Toggle switch
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Enable Equalizer',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+
+    return CupertinoPageScaffold(
+      child: Column(
+        children: [
+          StatusBar(title: 'Equalizer'),
+          Flexible(
+            child: CupertinoScrollbar(
+              controller: scrollController,
+              child: SingleChildScrollView(
+                controller: scrollController,
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Toggle switch row
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'Enable Equalizer',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          CupertinoSwitch(
+                            value: equalizerState.isEnabled,
+                            onChanged: (_) {
+                              ref
+                                  .read(equalizerControllerProvider.notifier)
+                                  .toggleEqualizer();
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Switch(
-                    value: equalizerState.isEnabled,
-                    onChanged: (_) {
-                      ref
-                          .read(equalizerControllerProvider.notifier)
-                          .toggleEqualizer();
-                    },
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-              
-              // Band sliders
-              const Text(
-                'Band Levels (dB)',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
+                    const SizedBox(height: 24),
+
+                    // Band sliders section
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12.0),
+                      child: Text(
+                        'Band Levels (dB)',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+
+                    // Grid of band sliders
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 5,
+                        childAspectRatio: 0.8,
+                        mainAxisSpacing: 12,
+                        crossAxisSpacing: 12,
+                      ),
+                      itemCount: equalizerState.bandLevels.length,
+                      itemBuilder: (context, index) {
+                        return _BandSlider(
+                          bandIndex: index,
+                          currentLevel: equalizerState.bandLevels[index],
+                          onLevelChanged: (newLevel) {
+                            ref
+                                .read(equalizerControllerProvider.notifier)
+                                .setBandLevel(index, newLevel);
+                          },
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 32),
+
+                    // Reset button
+                    Center(
+                      child: CupertinoButton(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 24.0,
+                          vertical: 12.0,
+                        ),
+                        onPressed: () {
+                          ref
+                              .read(equalizerControllerProvider.notifier)
+                              .resetBands();
+                        },
+                        child: const Text('Reset to Default'),
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                  ],
                 ),
               ),
-              const SizedBox(height: 16),
-              
-              // Grid of band sliders
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 5,
-                  childAspectRatio: 0.8,
-                  mainAxisSpacing: 8,
-                  crossAxisSpacing: 8,
-                ),
-                itemCount: equalizerState.bandLevels.length,
-                itemBuilder: (context, index) {
-                  return _BandSlider(
-                    bandIndex: index,
-                    currentLevel: equalizerState.bandLevels[index],
-                    onLevelChanged: (newLevel) {
-                      ref
-                          .read(equalizerControllerProvider.notifier)
-                          .setBandLevel(index, newLevel);
-                    },
-                  );
-                },
-              ),
-              const SizedBox(height: 24),
-              
-              // Reset button
-              Center(
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    ref
-                        .read(equalizerControllerProvider.notifier)
-                        .resetBands();
-                  },
-                  icon: const Icon(Icons.refresh),
-                  label: const Text('Reset to Default'),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -122,20 +152,18 @@ class _BandSlider extends ConsumerWidget {
     required this.bandIndex,
     required this.currentLevel,
     required this.onLevelChanged,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Vertical slider
-        SizedBox(
-          height: 120,
+        // Vertical slider using CupertinoSlider
+        Expanded(
           child: RotatedBox(
             quarterTurns: 3,
-            child: Slider(
+            child: CupertinoSlider(
               value: currentLevel.clamp(-15.0, 15.0),
               min: -15.0,
               max: 15.0,
@@ -148,12 +176,15 @@ class _BandSlider extends ConsumerWidget {
         // Band label
         Text(
           'B${bandIndex + 1}',
-          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
         ),
         // Current level display
         Text(
-          '${currentLevel.toStringAsFixed(1)} dB',
-          style: const TextStyle(fontSize: 10),
+          '${currentLevel.toStringAsFixed(1)}dB',
+          style: const TextStyle(
+            fontSize: 11,
+            color: CupertinoColors.systemGrey,
+          ),
         ),
       ],
     );
