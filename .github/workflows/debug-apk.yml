@@ -1,0 +1,35 @@
+name: Build Debug APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_debug_apk:
+    name: Build Debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Flutter tasks
+        uses: subosito/flutter-action@v2.16.0
+        with:
+          flutter-version-file: 'pubspec.yaml'
+          channel: 'stable'
+          cache: true
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Generate Localizations
+        run: flutter gen-l10n
+
+      - name: Build Debug APK
+        run: flutter build apk --debug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: classipod-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
