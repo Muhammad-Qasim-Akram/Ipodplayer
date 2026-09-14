@@ -205,9 +205,9 @@ by platform:
 
 ## 🤓 Author
 
-**Current Maintainer:** [Muhammad Qasim Akram](https://github.com/Muhammad-Qasim-Akram)
+**Current Maintainer for this specific custom repo:** [Muhammad Qasim Akram](https://github.com/Muhammad-Qasim-Akram)
 
-**Original Creator:** [Aditya R](https://github.com/adeeteya)
+**Original Creator and Maintainer:** [Aditya R](https://github.com/adeeteya)
 
 ## 🔖 LICENCE
 
