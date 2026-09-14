@@ -40,7 +40,7 @@ class MainActivity : AudioServiceFragmentActivity() {
     private fun openOutputPicker(): Boolean {
         return try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                val intent = Intent(Settings.Panel.ACTION_MEDIA_OUTPUT).apply {
+                val intent = Intent("android.settings.panel.action.MEDIA_OUTPUT").apply {
                     putExtra(
                         "android.provider.extra.PANEL_MEDIA_PACKAGE_NAME",
                         packageName,
