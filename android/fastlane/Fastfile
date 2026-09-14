@@ -98,7 +98,7 @@ platform :android do
       File.rename("#{root_path}/build/app/outputs/flutter-apk/app-production-release.apk", "#{root_path}/build/app/outputs/flutter-apk/Classipod-Android.apk")
 
       # set_github_release(
-      #   repository_name: "adeeteya/Classipod",
+      #   repository_name: "Muhammad-Qasim-Akram/Classipod",
       #   api_token: ENV["GH_TOKEN"],
       #   name: options[:version_number],
       #   tag_name: options[:version_number],

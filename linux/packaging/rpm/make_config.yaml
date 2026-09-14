@@ -1,11 +1,11 @@
 icon: snap/gui/classipod.png
 summary: Local Music Player Inspired by the iPod Classic
 group: Applications/Multimedia
-vendor: adeeteya
-packager: Aditya R
-packagerEmail: adeeteya@gmail.com
+vendor: Muhammad-Qasim-Akram
+packager: Muhammad Qasim Akram
+packagerEmail: qasimakram46@hotmail.com
 license: BSD-4-Clause
-url: https://github.com/adeeteya/Classipod
+url: https://github.com/Muhammad-Qasim-Akram/Classipod
 requires:
   - mpv
   - mpv-libs

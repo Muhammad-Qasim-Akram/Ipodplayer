@@ -1,10 +1,10 @@
 #define MyAppName "ClassiPod"
-#define MyAppPublisher "Adeeteya"
-#define MyAppPublisherURL "https://github.com/adeeteya/"
-#define MyAppURL "https://github.com/adeeteya/Classipod"
+#define MyAppPublisher "Muhammad-Qasim-Akram"
+#define MyAppPublisherURL "https://github.com/Muhammad-Qasim-Akram/"
+#define MyAppURL "https://github.com/Muhammad-Qasim-Akram/Classipod"
 #define MyAppExeName "Classipod.exe"
-#define MyAppContact "adeeteya@gmail.com"
-#define MyAppCopyright "Copyright (C) 2025 Adeeteya"
+#define MyAppContact "qasimakram46@hotmail.com"
+#define MyAppCopyright "Copyright (C) 2025 Muhammad Qasim Akram"
 #define Workspace GetEnv("GITHUB_WORKSPACE")
 
 [Setup]

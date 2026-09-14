@@ -13,7 +13,7 @@ class Constants {
       "'https://files.radio.co/humorous-skink/staging/default-artwork.png'";
 
   //If you are seeing this please consider donating to the below link😉
-  static const String donationLinkUrl = "https://buymeacoffee.com/adeeteya";
+  static const String donationLinkUrl = "https://buymeacoffee.com/Muhammad-Qasim-Akram";
 
   // Click Wheel Sensitivity Constants
   static const double clickWheelVeryLowSensitivitySmallThreshold = 64;

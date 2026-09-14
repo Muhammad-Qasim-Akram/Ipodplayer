@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🎵 ClassiPod
+# 🎵 Ipodplayer
 
-![Classipod App Screenshots](screenshots/combined.jpg)
+![Ipodplayer App Screenshots](screenshots/combined.jpg)
 
-Introducing "ClassiPod" – Your Timeless Audio Experience
+Introducing "Ipodplayer" – Your Timeless Audio Experience
 
-Step back in time with ClassiPod, a local music player app designed to capture the nostalgic essence
+Step back in time with Ipodplayer, a local music player app designed to capture the nostalgic essence
 of the iconic iPod Classic. Immerse yourself in the familiar click wheel interface and relive the
 joy of navigating your music library with a touch of retro charm.
 
@@ -16,27 +16,27 @@ joy of navigating your music library with a touch of retro charm.
 wheel. Scroll, click, and feel the tactile response as you rediscover the joy of selecting your
 favorite tracks with the same ease as the original iPod.
 
-🗃️ Local Music Library: ClassiPod is focused on your locally stored music files, ensuring that your
+🗃️ Local Music Library: Ipodplayer is focused on your locally stored music files, ensuring that your
 personal music collection takes center stage. Organize your tracks, albums, and playlists just like
 you did on your trusty iPod Classic.
 
-🖌️ Customizable Themes: Personalize your ClassiPod experience with the option of silver or grey
+🖌️ Customizable Themes: Personalize your Ipodplayer experience with the option of silver or grey
 device frame. Choose from the two different color schemes to tailor the app's appearance to your
 unique style.
 
 🖼️ Cover Art Display: Immerse yourself in your music by appreciating album artwork on the vibrant
-display. ClassiPod pays homage to the visual appeal of classic iPods by showcasing your favorite
+display. Ipodplayer pays homage to the visual appeal of classic iPods by showcasing your favorite
 album covers in a retro-inspired format.
 
-🎼 No Frills, Just Music: ClassiPod stays true to the essence of a music player – no distractions, no
+🎼 No Frills, Just Music: Ipodplayer stays true to the essence of a music player – no distractions, no
 unnecessary features. Focus solely on the joy of listening to your favorite tunes without the
 complexities of a modern streaming service.
 
-🎧 Offline Listening: Enjoy your music without relying on an internet connection. ClassiPod is
+🎧 Offline Listening: Enjoy your music without relying on an internet connection. Ipodplayer is
 perfect for those moments when you want to disconnect and savor the tunes stored locally on your
 device.
 
-Relive the magic of the iPod Classic with ClassiPod – where timeless design meets the convenience of
+Relive the magic of the iPod Classic with Ipodplayer – where timeless design meets the convenience of
 today. Download now and embark on a journey down memory lane with your music in the palm of your
 hand.
 
@@ -80,7 +80,7 @@ If you like what you see, please ⭐ the repo.
 
 ### 🎵 Supported audio formats
 
-ClassiPod imports a format when its metadata can be read and at least one
+Ipodplayer imports a format when its metadata can be read and at least one
 configured playback backend can play it. Playback availability therefore varies
 by platform:
 
@@ -120,7 +120,7 @@ by platform:
         <img height="80" alt="Get it on F-Droid" src="https://f-droid.org/badge/get-it-on.png">
       </a>
       <br>
-      <a href="https://github.com/adeeteya/Classipod/releases/latest/download/Classipod-Android.apk">
+      <a href="https://github.com/Muhammad-Qasim-Akram/Classipod/releases/latest/download/Classipod-Android.apk">
         <img alt="APK download" src="https://img.shields.io/static/v1?label=Download&message=Android+.apk&color=2ea44f&style=for-the-badge&logo=Android&logoColor=white&logoSize=auto">
       </a>
     </td>
@@ -129,17 +129,17 @@ by platform:
   <tr>
       <td>Linux</td>
       <td>
-        <a href="https://github.com/adeeteya/Classipod/releases/latest/download/Classipod-Linux-AppImage.AppImage">
+        <a href="https://github.com/Muhammad-Qasim-Akram/Classipod/releases/latest/download/Classipod-Linux-AppImage.AppImage">
           <img alt="Download .AppImage" src="https://img.shields.io/static/v1?label=Download&message=.AppImage&color=FCC624&style=for-the-badge&logo=linux&logoColor=white&logoSize=auto">
         </a>
         <br>
         <br>
-        <a href="https://github.com/adeeteya/Classipod/releases/latest/download/Classipod-Linux-deb.deb">
+        <a href="https://github.com/Muhammad-Qasim-Akram/Classipod/releases/latest/download/Classipod-Linux-deb.deb">
           <img alt="Download .deb" src="https://img.shields.io/static/v1?label=Download&message=%20%20%20%20%20.deb&color=A81D33&style=for-the-badge&logo=debian&logoColor=white&logoSize=auto">
         </a>
         <br>
         <br>
-        <a href="https://github.com/adeeteya/Classipod/releases/latest/download/Classipod-Linux-rpm.rpm">
+        <a href="https://github.com/Muhammad-Qasim-Akram/Classipod/releases/latest/download/Classipod-Linux-rpm.rpm">
           <img alt="Download .rpm" src="https://img.shields.io/static/v1?label=Download&message=.rpm&color=EE0000&style=for-the-badge&logo=redhat&logoColor=white&logoSize=auto">
         </a>
       </td>
@@ -148,7 +148,7 @@ by platform:
   <tr>
       <td>Windows</td>
       <td>
-        <a href="https://github.com/adeeteya/Classipod/releases/latest/download/Classipod-Windows.exe">
+        <a href="https://github.com/Muhammad-Qasim-Akram/Classipod/releases/latest/download/Classipod-Windows.exe">
           <img alt="Download Windows Installer" src="https://img.shields.io/static/v1?label=Download&message=Windows+.exe&color=blue&style=for-the-badge&logo=webtrees&logoColor=white&logoSize=auto">
         </a>
       </td>
@@ -157,7 +157,7 @@ by platform:
   <tr>
       <td>Web App</td>
       <td>
-        <a href="https://adeeteya.github.io/Classipod/#/">
+        <a href="https://Muhammad-Qasim-Akram.github.io/Classipod/#/">
           <img alt="Web App" src="https://img.shields.io/static/v1?label=Webapp&message=Visit+Website&color=blueviolet&style=for-the-badge&logo=googlechrome&logoColor=white&logoSize=auto">
         </a>
       </td>
@@ -174,7 +174,7 @@ by platform:
 | [**battery_plus**](https://pub.dev/packages/battery_plus)                                     | Shows phone battery level and status                                                |
 | [**cupertino_icons**](https://pub.dev/packages/cupertino_icons)                               | For ios style icons                                                                 |
 | [**device_preview_plus**](https://pub.dev/packages/device_preview_plus)                       | For visualizing how the app looks on different devices and screens                  |
-| [**disable_battery_optimization**](https://github.com/adeeteya/Disable-Battery-Optimizations) | To Disable vendor or android specific battery optimizations for background playback |
+| [**disable_battery_optimization**](https://github.com/Muhammad-Qasim-Akram/Disable-Battery-Optimizations) | To Disable vendor or android specific battery optimizations for background playback |
 | [**file_picker**](https://pub.dev/packages/file_picker)                                       | To select the directory from which the music files are scanned                      |
 | [**flutter_localizations**](https://pub.dev/packages/flutter_localizations)                   | For in-app localization map data                                                    |
 | [**flutter_riverpod**](https://pub.dev/packages/flutter_riverpod)                             | For State Management                                                                |
@@ -187,7 +187,7 @@ by platform:
 | [**just_audio_media_kit**](https://pub.dev/packages/just_audio_media_kit)                     | To play audio files on Windows and Linux                                            |
 | [**media_kit_libs_linux**](https://pub.dev/packages/media_kit_libs_linux)                     | Media kit Libraries for Linux                                                       |
 | [**media_kit_libs_windows_audio**](https://pub.dev/packages/media_kit_libs_windows_audio)     | Media kit Libraries for Windows                                                     |
-| [**on_audio_query**](https://github.com/adeeteya/on_audio_query)                              | To fetch all the music files from Android and iOS                                   |
+| [**on_audio_query**](https://github.com/Muhammad-Qasim-Akram/on_audio_query)                              | To fetch all the music files from Android and iOS                                   |
 | [**path_provider**](https://pub.dev/packages/path_provider)                                   | To fetch app data directories                                                       |
 | [**permission_handler**](https://pub.dev/packages/permission_handler)                         | To check and request for file and audio access permissions                          |
 | [**shared_preferences**](https://pub.dev/packages/shared_preferences)                         | To store system settings                                                            |
@@ -205,12 +205,15 @@ by platform:
 
 ## 🤓 Author
 
-**[Aditya R](https://github.com/adeeteya)**
+**Current Maintainer:** [Muhammad Qasim Akram](https://github.com/Muhammad-Qasim-Akram)
+
+**Original Creator:** [Aditya R](https://github.com/adeeteya)
 
 ## 🔖 LICENCE
 
-Copyright (c) 2025 Aditya R
-[BSD-4-Clause LICENCE](https://github.com/adeeteya/Classipod/blob/master/LICENSE)
+Original work Copyright (c) 2025 Aditya R
+Modified work Copyright (c) 2025 Muhammad Qasim Akram
+[BSD-4-Clause LICENCE](https://github.com/Muhammad-Qasim-Akram/Classipod/blob/master/LICENSE)
 
 ## 🙏 Attributions
 

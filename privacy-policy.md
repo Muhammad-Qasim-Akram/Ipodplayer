@@ -28,4 +28,4 @@ This policy is effective as of 2025-01-21
 
 **Contact Me**
 
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at adeeteya@gmail.com.
+If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at qasimakram46@hotmail.com.

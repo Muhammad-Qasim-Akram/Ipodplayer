@@ -22,7 +22,7 @@ To build and run the project, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/adeeteya/Classipod.git
+    git clone https://github.com/Muhammad-Qasim-Akram/Classipod.git
     ```
 2.  **Install dependencies:**
     ```bash
