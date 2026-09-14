@@ -1,13 +1,23 @@
 import 'package:classipod/core/constants/app_palette.dart';
 import 'package:classipod/features/now_playing/provider/now_playing_details_provider.dart';
 import 'package:classipod/features/status_bar/widgets/battery_indicator.dart';
+import 'package:classipod/features/status_bar/widgets/cast_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class StatusBar extends StatelessWidget {
   final String title;
 
-  const StatusBar({super.key, required this.title});
+  /// Shows a persistent cast icon on this status bar. Only pass true for
+  /// screens that should always offer a way to switch audio output, such
+  /// as the Now Playing screen.
+  final bool showCastButton;
+
+  const StatusBar({
+    super.key,
+    required this.title,
+    this.showCastButton = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +76,10 @@ class StatusBar extends StatelessWidget {
                   );
                 },
               ),
+              if (showCastButton) ...[
+                const SizedBox(width: 2),
+                const RepaintBoundary(child: CastButton()),
+              ],
               const SizedBox(width: 2),
               const RepaintBoundary(child: BatteryIndicator()),
             ],

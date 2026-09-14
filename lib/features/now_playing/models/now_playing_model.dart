@@ -1,7 +1,7 @@
 import 'package:classipod/core/models/music_metadata.dart';
 import 'package:just_audio/just_audio.dart';
 
-enum NowPlayingType { album, playlist, songs }
+enum NowPlayingType { album, playlist, folder, songs }
 
 class NowPlayingModel {
   final int currentIndex;

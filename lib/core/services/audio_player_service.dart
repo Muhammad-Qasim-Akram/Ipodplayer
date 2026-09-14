@@ -200,6 +200,35 @@ class AudioPlayerServiceNotifier extends AsyncNotifier<void> {
     });
   }
 
+  Future<void> playFolder({
+    required List<MusicMetadata> folderSongs,
+    required int songIndex,
+  }) async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(() async {
+      // If Folder has no songs or the songIndex is out of bounds
+      if (folderSongs.isEmpty || songIndex >= folderSongs.length) {
+        return;
+      }
+      final nowPlayingDetails = ref.read(nowPlayingDetailsProvider);
+
+      // If this folder is already playing
+      if (nowPlayingDetails.nowPlayingType == NowPlayingType.folder &&
+          listEquals(nowPlayingDetails.metadataList, folderSongs)) {
+        await playSongAtIndex(songIndex);
+        return;
+      } else {
+        await setAudioSource(
+          nowPlayingType: NowPlayingType.folder,
+          musicMetadataList: folderSongs,
+        );
+        await playSongAtIndex(songIndex);
+        await setShuffleMode(false);
+        Future.delayed(const Duration(milliseconds: 100), play);
+      }
+    });
+  }
+
   Future<void> playSongAtIndex(int index) async {
     state = const AsyncLoading();
     state = await AsyncValue.guard(() async {

@@ -116,6 +116,18 @@
   "@genreSongsScreenTitle": {
     "description": "The title of the genre songs screen"
   },
+  "foldersScreenTitle": "Folders",
+  "@foldersScreenTitle": {
+    "description": "The title of the folders screen, where each folder is browsed and played like a playlist"
+  },
+  "castUnavailableDialogTitle": "Cast Unavailable",
+  "@castUnavailableDialogTitle": {
+    "description": "The title of the dialog shown when the system output picker could not be opened"
+  },
+  "castUnavailableDialogContent": "Couldn't open the output picker on this device. Try connecting to a Bluetooth speaker or Chromecast from your system settings instead.",
+  "@castUnavailableDialogContent": {
+    "description": "The content of the dialog shown when the system output picker could not be opened"
+  },
   "deviceColorSettingTitle": "Device Color",
   "@deviceColorSettingTitle": {
     "description": "The title of the device color setting"

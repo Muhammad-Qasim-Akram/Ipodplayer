@@ -17,6 +17,8 @@ import 'package:classipod/features/music/artists/screens/artist_albums_screen.da
 import 'package:classipod/features/music/artists/screens/artists_selection_screen.dart';
 import 'package:classipod/features/music/cover_flow/screens/cover_flow_album_selection_screen.dart';
 import 'package:classipod/features/music/cover_flow/screens/cover_flow_screen.dart';
+import 'package:classipod/features/music/folders/screens/folder_songs_screen.dart';
+import 'package:classipod/features/music/folders/screens/folders_screen.dart';
 import 'package:classipod/features/music/genres/screens/genre_songs_screen.dart';
 import 'package:classipod/features/music/genres/screens/genres_screen.dart';
 import 'package:classipod/features/music/playlist/screens/playlist_rename_screen.dart';
@@ -70,6 +72,9 @@ enum Routes {
   genres,
   genreSongs,
   genresSongsMoreOptions,
+  folders,
+  folderSongs,
+  folderSongsMoreOptions,
   search,
   searchMoreOptions;
 
@@ -138,6 +143,12 @@ enum Routes {
         return context.localization.genreSongsScreenTitle;
       case genresSongsMoreOptions:
         return context.localization.genreSongsScreenTitle;
+      case folders:
+        return context.localization.foldersScreenTitle;
+      case folderSongs:
+        return context.localization.foldersScreenTitle;
+      case folderSongsMoreOptions:
+        return context.localization.foldersScreenTitle;
       case search:
         return context.localization.searchScreenTitle;
       case searchMoreOptions:
@@ -564,6 +575,46 @@ final routerProvider = Provider(
                                           SongsMoreOptionsModal(
                                             routeName: Routes
                                                 .genresSongsMoreOptions
+                                                .name,
+                                            currentSongMetadata:
+                                                state.extra as MusicMetadata,
+                                          ),
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      GoRoute(
+                        path: Routes.folders.toString(),
+                        name: Routes.folders.name,
+                        parentNavigatorKey: rootNavigatorKey,
+                        pageBuilder: (context, state) =>
+                            const CupertinoPage(child: FoldersScreen()),
+                        routes: [
+                          GoRoute(
+                            path: Routes.folderSongs.name,
+                            name: Routes.folderSongs.name,
+                            parentNavigatorKey: rootNavigatorKey,
+                            pageBuilder: (context, state) => CupertinoPage(
+                              child: FolderSongsScreen(
+                                folderPath: state.extra as String,
+                              ),
+                            ),
+                            routes: [
+                              GoRoute(
+                                path: Routes.folderSongsMoreOptions.name,
+                                name: Routes.folderSongsMoreOptions.name,
+                                parentNavigatorKey: rootNavigatorKey,
+                                pageBuilder: (context, state) =>
+                                    OptionsModalPage(
+                                      context: context,
+                                      title: Routes.folderSongsMoreOptions
+                                          .title(context),
+                                      builder: (context) =>
+                                          SongsMoreOptionsModal(
+                                            routeName: Routes
+                                                .folderSongsMoreOptions
                                                 .name,
                                             currentSongMetadata:
                                                 state.extra as MusicMetadata,

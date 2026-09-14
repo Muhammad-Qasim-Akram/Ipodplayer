@@ -343,7 +343,7 @@ class _NowPlayingScreenState extends ConsumerState<NowPlayingScreen> {
       return CupertinoPageScaffold(
         child: Column(
           children: [
-            StatusBar(title: Routes.nowPlaying.title(context)),
+            StatusBar(title: Routes.nowPlaying.title(context), showCastButton: true),
             Expanded(
               child: EmptyStateWidget(
                 emptyDescription: context.localization.noMusicFilesFound,
@@ -357,7 +357,7 @@ class _NowPlayingScreenState extends ConsumerState<NowPlayingScreen> {
     return CupertinoPageScaffold(
       child: Column(
         children: [
-          StatusBar(title: Routes.nowPlaying.title(context)),
+          StatusBar(title: Routes.nowPlaying.title(context), showCastButton: true),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

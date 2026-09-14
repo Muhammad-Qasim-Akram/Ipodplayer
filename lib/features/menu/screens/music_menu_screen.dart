@@ -16,6 +16,7 @@ enum _MusicListDisplayItems {
   albums,
   songs,
   genres,
+  folders,
   search;
 
   String title(BuildContext context) {
@@ -32,6 +33,8 @@ enum _MusicListDisplayItems {
         return context.localization.songsScreenTitle;
       case genres:
         return context.localization.genresScreenTitle;
+      case folders:
+        return context.localization.foldersScreenTitle;
       case search:
         return context.localization.searchScreenTitle;
     }
@@ -87,6 +90,9 @@ class _MusicMenuScreenState extends ConsumerState<MusicMenuScreen>
         break;
       case _MusicListDisplayItems.genres:
         context.goNamed(Routes.genres.name);
+        break;
+      case _MusicListDisplayItems.folders:
+        context.goNamed(Routes.folders.name);
         break;
       case _MusicListDisplayItems.search:
         context.goNamed(Routes.search.name);
