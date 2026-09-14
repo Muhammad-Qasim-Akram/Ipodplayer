@@ -34,7 +34,7 @@ Examples of unacceptable behavior by participants include:
 First, clone the repository with the 'clone' command, or just download the zip.
 
 ```
-$ git clone git@github.com:adeeteya/Classipod.git
+$ git clone git@github.com:Muhammad-Qasim-Akram/IpodPlayer.git
 ```
 
 Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.io/get-started/editor/). For more information about Flutter installation procedure, check the [official install guide](https://flutter.io/get-started/install/).
