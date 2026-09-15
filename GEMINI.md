@@ -3,7 +3,6 @@
 This document provides a comprehensive overview of the ClassiPod project, including its purpose, architecture, and development conventions.
 
 ## Project Overview
-
 ClassiPod is a local music player app designed to emulate the nostalgic experience of the iPod Classic. It features a click wheel interface and focuses on providing a simple, distraction-free music listening experience. The app is built with Flutter and supports Android, iOS, Linux, macOS, Windows, and web.
 
 ### Key Technologies
@@ -81,6 +80,7 @@ The app uses the `flutter_riverpod` package for state management. Providers are 
 ### CI/CD
 
 The project uses GitHub Actions for CI/CD. The `.github/workflows` directory contains two workflows:
+
 
 *   `pr-checker.yaml`: This workflow runs on every pull request and checks for linting errors and runs the tests.
 *   `build-and-deploy.yaml`: This workflow is triggered manually and can build and deploy the app for Android, Linux, Windows, and the web.
